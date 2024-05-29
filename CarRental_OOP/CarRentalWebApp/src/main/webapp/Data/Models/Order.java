@@ -15,3 +15,13 @@ public class Order {
     private BigDecimal totalPrice;
 }
 
+/*
+<div>
+                <label>Status:</label>
+                <select value={status} onChange={(e) => setStatus(e.target.value)} required>
+                    <option value="pending">Pending</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+            </div>
+*/

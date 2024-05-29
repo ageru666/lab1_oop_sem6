@@ -4,11 +4,15 @@ import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 @WebFilter("/api/*")
-public class JwtFilter implements Filter {
+@Component
+public class JwtFilter implements Filter   {
+
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         if (("POST".equalsIgnoreCase(request.getMethod()) && (request.getRequestURI().endsWith("/api/clients") || request.getRequestURI().endsWith("/api/login")))
